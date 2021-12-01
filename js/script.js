@@ -3,6 +3,8 @@ let introScreen = $("#intro");
 let gameScreen = $("#game");
 let gameOverScreen = $("#gameOver");
 
+let endMessage = $("#endMessage");
+
 //Game variables
 let age = $("#pokeAge");
 let name = $("#pokeName");
@@ -15,7 +17,7 @@ let currentHunger = 100;
 let currentEnergy = 100;
 let currentBoredom = 100;
 
-let gameInProg = true;
+let gameInProg = false;
 
 //Screens start hidden, fade in intro on page load
 introScreen.fadeIn();
@@ -24,11 +26,13 @@ introScreen.fadeIn();
 function gameStart() {
     introScreen.fadeOut();
     setTimeout(() => { gameScreen.fadeIn(); }, 1500);
+    setTimeout(() => { playGame(); }, 2000);
 };
 
 function replay() {
     gameOverScreen.fadeOut();
     setTimeout(() => { gameScreen.fadeIn(); }, 1500);
+    setTimeout(() => { playGame(); }, 2000);
 };
 
 function gameEnd() {
@@ -88,7 +92,6 @@ $("#battleButton").on("click", function() {
         if(currentBoredom > 100) {currentBoredom = 100}; //Boredom can not exceede 100
         $("#boredomBar").val(currentBoredom);
     };
-    gameEnd();
 });
 
 //Game over buttons
@@ -105,3 +108,54 @@ $("#playAgain").on("click", function() {
 $("#return").on("click", function() {
     gameReset();
 });
+
+function playGame() {
+    gameInProg = true;
+
+    let ageUp = setInterval(() => {
+        if(gameInProg && currentAge <= 40) {
+            currentAge++;
+            age.text(`Age: ${currentAge}`);
+        } else {
+            gameInProg = false;
+            gameEnd();
+            clearInterval(ageUp);
+        };
+    }, 1000);
+
+    let boredomDown = setInterval(() => {
+        if(gameInProg && currentBoredom > 0) {
+            currentBoredom--;
+            $("#boredomBar").val(currentBoredom);
+        } else {
+            gameInProg = false;
+            gameEnd();
+            clearInterval(boredomDown);
+        };
+    }, 100);
+
+    let hungerDown = setInterval(() => {
+        if(gameInProg && currentHunger > 0) {
+            currentHunger--;
+            $("#hungerBar").val(currentHunger);
+        } else {
+            gameInProg = false;
+            gameEnd();
+            clearInterval(hungerDown);
+        };
+    }, 100);
+
+    let energyDown = setInterval(() => {
+        if(gameInProg && currentEnergy > 0) {
+            currentEnergy--;
+            $("#energyBar").val(currentEnergy);
+        } else {
+            gameInProg = false;
+            gameEnd();
+            clearInterval(energyDown);
+        };
+    }, 100);
+
+    // endMessage.text("Your pokemon died of old age.");
+    // endMessage.text("Your pokemon wandered off due to extreme bordom.");
+};
