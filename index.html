@@ -14,7 +14,7 @@
 <body>
 
     <!-- Intro Screen -->
-    <div id="intro">
+    <div id="intro" class="hidden">
         <h1>Welcome</h1>
         <h2>Enter your pokemon name below:</h1>
         <input id="nameField" class="nes-input" type="text"><br>
@@ -22,7 +22,7 @@
     </div>
 
     <!-- Main Game Screen -->
-    <div id="game">
+    <div id="game" class="hidden">
         <div id="topBar">
             <h1>Level</h1>
             <h1>Name</h1>
@@ -35,28 +35,27 @@
 
             <div class="bars">
                 <button class="nes-btn">Eat</button>
-                <progress class="nes-progress is-primary" value="90" max="100"></progress>
+                <progress class="nes-progress is-primary" value="100" max="100"></progress>
             </div>
             
             <div class="bars">
                 <button class="nes-btn">Sleep</button>
-                <progress class="nes-progress is-primary" value="90" max="100"></progress>
+                <progress class="nes-progress is-primary" value="100" max="100"></progress>
             </div>
 
             <div class="bars">
                 <button class="nes-btn">Battle</button>
-                <progress class="nes-progress is-primary" value="90" max="100"></progress>
+                <progress class="nes-progress is-primary" value="100" max="100"></progress>
             </div>
         </div>
+    </div>
 
-        <!-- Game Over Screen -->
-        <div id="gameOver">
-            <h1>Game Over</h1>
-            <p>Would you like to play again?</p>
-            <button class="nes-btn is-success">Yes</button>
-            <button class="nes-btn is-error">No</button>
-        </div>
-
+    <!-- Game Over Screen -->
+    <div id="gameOver" class="hidden">
+        <h1>Game Over</h1>
+        <p>Would you like to play again?</p>
+        <button class="nes-btn is-success">Yes</button>
+        <button class="nes-btn is-error">No</button>
     </div>
 </body>
 </html>

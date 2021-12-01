@@ -42,3 +42,8 @@
 #gameOver > p {
     margin: 50px;
 }
+
+/* Class to hide game objects */
+.hidden {
+    display: none;
+}
