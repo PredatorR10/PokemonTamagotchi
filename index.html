@@ -16,17 +16,18 @@
     <!-- Intro Screen -->
     <div id="intro" class="hidden">
         <h1>Welcome</h1>
-        <h2>Enter your pokemon name below:</h1>
+        <h2>Enter Your Pokemon Name Below:</h2>
         <input id="nameField" class="nes-input" type="text"><br>
-        <button type="button" class="nes-btn is-primary">Start</button>
+        <h3 id="nameWarning"></h3>
+        <button type="button" class="nes-btn is-primary" id="startButton">Start</button>
     </div>
 
     <!-- Main Game Screen -->
     <div id="game" class="hidden">
         <div id="topBar">
-            <h1>Level</h1>
-            <h1>Name</h1>
-            <h1>Age</h1>
+            <h1 id="pokeLevel">Level</h1>
+            <h1 id="pokeName">Name</h1>
+            <h1 id="pokeAge">Age</h1>
         </div>
         <div id="pokemon">
             <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png">
