@@ -15,16 +15,26 @@
     justify-content: space-around;
     margin-top: 100px;
 }
-#statusBar {
-    width: 400px;
+#hungerStatus {
+    width: 10px;
     height: 20px;
-    background-color: red;
-    text-align: center;
-    padding-top: 5px;
+    background-color: blue;
 }
-button {
-    margin-right: 0px;
+#energyStatus {
+    width: 10px;
+    height: 20px;
+    background-color: blue;
+}
+#boredomStatus {
+    width: 10px;
+    height: 20px;
+    background-color: blue;
 }
 .bars {
     display: flex;
+}
+.statusBar {
+    width: 400px;
+    height: 20px;
+    background-color: red;
 }
