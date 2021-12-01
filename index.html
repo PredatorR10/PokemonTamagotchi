@@ -5,20 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="js/script.js" defer></script>
     <title>Pokemon Tamagotchi</title>
 </head>
 <body>
 
-    <!-- <div id="intro">
+    <!-- Intro Screen -->
+    <div id="intro">
         <h1>Welcome</h1>
         <h2>Enter your pokemon name below:</h1>
-        <input id="nameField" type="text"><br>
-        <button>Start</button>
-    </div> -->
+        <input id="nameField" class="nes-input" type="text"><br>
+        <button type="button" class="nes-btn is-primary">Start</button>
+    </div>
 
-    <!-- <div id="game">
+    <!-- Main Game Screen -->
+    <div id="game">
         <div id="topBar">
             <h1>Level</h1>
             <h1>Name</h1>
@@ -30,33 +34,27 @@
         <div id="bottomBar">
 
             <div class="bars">
-                <button>Eat</button>
-                <div class="statusBar">
-                    <div id="hungerStatus"></div>
-                </div>
+                <button class="nes-btn">Eat</button>
+                <progress class="nes-progress is-primary" value="90" max="100"></progress>
             </div>
             
             <div class="bars">
-                <button>Sleep</button>
-                <div class="statusBar">
-                    <div id="energyStatus"></div>
-                </div>
+                <button class="nes-btn">Sleep</button>
+                <progress class="nes-progress is-primary" value="90" max="100"></progress>
             </div>
 
             <div class="bars">
-                <button>Battle</button>
-                <div class="statusBar">
-                    <div id="boredomStatus"></div>
-                </div>
+                <button class="nes-btn">Battle</button>
+                <progress class="nes-progress is-primary" value="90" max="100"></progress>
             </div>
+        </div>
 
-        </div> -->
-
+        <!-- Game Over Screen -->
         <div id="gameOver">
             <h1>Game Over</h1>
             <p>Would you like to play again?</p>
-            <button>Yes</button>
-            <button>No</button>
+            <button class="nes-btn is-success">Yes</button>
+            <button class="nes-btn is-error">No</button>
         </div>
 
     </div>
