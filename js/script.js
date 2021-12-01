@@ -118,10 +118,13 @@ function playGame() {
             age.text(`Age: ${currentAge}`);
         } else {
             gameInProg = false;
+            if(currentAge > 40) {
+                endMessage.text("Your pokemon died of old age.");
+            };
             gameEnd();
             clearInterval(ageUp);
         };
-    }, 1000);
+    }, 100);
 
     let boredomDown = setInterval(() => {
         if(gameInProg && currentBoredom > 0) {
@@ -129,6 +132,9 @@ function playGame() {
             $("#boredomBar").val(currentBoredom);
         } else {
             gameInProg = false;
+            if(currentBoredom === 0) {
+                endMessage.text("Your pokemon wandered off due to extreme bordom.");
+            };
             gameEnd();
             clearInterval(boredomDown);
         };
@@ -140,6 +146,9 @@ function playGame() {
             $("#hungerBar").val(currentHunger);
         } else {
             gameInProg = false;
+            if(currentHunger === 0) {
+                endMessage.text("Your pokemon died of starvation.");
+            }
             gameEnd();
             clearInterval(hungerDown);
         };
@@ -151,11 +160,11 @@ function playGame() {
             $("#energyBar").val(currentEnergy);
         } else {
             gameInProg = false;
+            if(currentEnergy === 0) {
+                endMessage.text("Your pokemon died to lack of sleep.");
+            }
             gameEnd();
             clearInterval(energyDown);
         };
     }, 100);
-
-    // endMessage.text("Your pokemon died of old age.");
-    // endMessage.text("Your pokemon wandered off due to extreme bordom.");
 };
