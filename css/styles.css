@@ -2,6 +2,7 @@
     text-align: center;
     margin-top: 100px;
 }
+
 #topBar {
     display: flex;
     justify-content: space-around;
@@ -37,4 +38,12 @@
     width: 400px;
     height: 20px;
     background-color: red;
+}
+
+#gameOver {
+    text-align: center;
+    margin-top: 200px;
+}
+#gameOver > button {
+    margin: 30px;
 }
