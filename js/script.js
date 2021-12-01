@@ -121,8 +121,8 @@ function playGame() {
             if(currentAge > 40) {
                 endMessage.text("Your pokemon died of old age.");
             };
-            gameEnd();
             clearInterval(ageUp);
+            gameEnd();
         };
     }, 100);
 
@@ -135,7 +135,6 @@ function playGame() {
             if(currentBoredom === 0) {
                 endMessage.text("Your pokemon wandered off due to extreme bordom.");
             };
-            gameEnd();
             clearInterval(boredomDown);
         };
     }, 100);
@@ -148,8 +147,7 @@ function playGame() {
             gameInProg = false;
             if(currentHunger === 0) {
                 endMessage.text("Your pokemon died of starvation.");
-            }
-            gameEnd();
+            };
             clearInterval(hungerDown);
         };
     }, 100);
@@ -162,8 +160,7 @@ function playGame() {
             gameInProg = false;
             if(currentEnergy === 0) {
                 endMessage.text("Your pokemon died to lack of sleep.");
-            }
-            gameEnd();
+            };
             clearInterval(energyDown);
         };
     }, 100);
