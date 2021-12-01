@@ -16,6 +16,9 @@
 }
 
 /* Game CSS */
+img {
+    height: 450px;
+}
 #topBar {
     display: flex;
     justify-content: space-around;

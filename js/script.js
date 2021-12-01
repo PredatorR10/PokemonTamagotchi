@@ -19,6 +19,13 @@ let currentBoredom = 100;
 
 let gameInProg = false;
 let restarting = false;
+
+let image = $("#pokemonIMG");
+let evolutions = [
+    "https://thumbs.gfycat.com/HoarseSnoopyBadger-size_restricted.gif",
+    "https://c.tenor.com/-mfw8KZJdcEAAAAM/charmeleon-pokemon.gif",
+    "https://64.media.tumblr.com/tumblr_ma4fsg8aDZ1rfjowdo1_500.gif"
+];
 //Screens start hidden, fade in intro on page load
 introScreen.fadeIn();
 
@@ -44,6 +51,7 @@ function gameEnd() {
     currentEnergy = 100;
     currentBoredom = 100;
     currentLevel = 1;
+    setTimeout(() => { image.attr("src", evolutions[0]); }, 1500);
     currentAge = 1;
 };
 
@@ -91,6 +99,14 @@ $("#battleButton").on("click", function() {
         currentBoredom += 10;
         if(currentBoredom > 100) {currentBoredom = 100}; //Boredom can not exceede 100
         $("#boredomBar").val(currentBoredom);
+        currentLevel++;
+        level.text(`Level: ${currentLevel}`);
+        if(currentLevel >= 16 && currentLevel < 36) {
+            image.attr("src", evolutions[1]);
+        } else if(currentLevel >= 36) {
+            image.attr("src", evolutions[2]);
+        }
+
     };
 });
 
@@ -112,10 +128,11 @@ $("#return").on("click", function() {
     gameReset();
 });
 
+//function containing main gameplay mechanics
 function playGame() {
     gameInProg = true;
     restarting = false;
-
+    //intervals to increase age and decrease pokemon stats over time
     let ageUp = setInterval(() => {
         if(gameInProg && currentAge <= 40) {
             currentAge++;
@@ -128,7 +145,7 @@ function playGame() {
             clearInterval(ageUp);
             gameEnd();
         };
-    }, 100);
+    }, 1000);
 
     let boredomDown = setInterval(() => {
         if(gameInProg && currentBoredom > 0) {
@@ -141,7 +158,7 @@ function playGame() {
             };
             clearInterval(boredomDown);
         };
-    }, 100);
+    }, 200);
 
     let hungerDown = setInterval(() => {
         if(gameInProg && currentHunger > 0) {
@@ -154,7 +171,7 @@ function playGame() {
             };
             clearInterval(hungerDown);
         };
-    }, 100);
+    }, 200);
 
     let energyDown = setInterval(() => {
         if(gameInProg && currentEnergy > 0) {
@@ -167,5 +184,5 @@ function playGame() {
             };
             clearInterval(energyDown);
         };
-    }, 100);
+    }, 200);
 };
