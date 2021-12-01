@@ -11,6 +11,12 @@ let level = $("#pokeLevel");
 let currentAge = 1;
 let currentLevel = 1;
 
+let currentHunger = 50;
+let currentEnergy = 50;
+let currentBoredom = 50;
+
+let gameInProg = true;
+
 //Screens start hidden, fade in intro on page load
 introScreen.fadeIn();
 
@@ -44,3 +50,27 @@ $("#startButton").on("click", function() {
     };
 });
 
+//Game buttons
+$("#eatButton").on("click", function() {
+    if(currentHunger !== 100 && gameInProg) { //If game is still running add 10 pts to hunger when clicked
+        currentHunger += 10;
+        if(currentHunger > 100) {currentHunger = 100}; //Hunger can not exceede 100
+        $("#hungerBar").val(currentHunger);
+    };
+});
+
+$("#sleepButton").on("click", function() {
+    if(currentEnergy !== 100 && gameInProg) { //If game is still running add 10 pts to energy when clicked
+        currentEnergy += 10;
+        if(currentEnergy > 100) {currentEnergy = 100}; //Energy can not exceede 100
+        $("#energyBar").val(currentEnergy);
+    };
+});
+
+$("#battleButton").on("click", function() {
+    if(currentBoredom !== 100 && gameInProg) { //If game is still running add 10 pts to boredom when clicked
+        currentBoredom += 10;
+        if(currentBoredom > 100) {currentBoredom = 100}; //Boredom can not exceede 100
+        $("#boredomBar").val(currentBoredom);
+    };
+});
