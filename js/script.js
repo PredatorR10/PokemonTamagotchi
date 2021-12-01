@@ -18,7 +18,7 @@ let currentEnergy = 100;
 let currentBoredom = 100;
 
 let gameInProg = false;
-
+let restarting = false;
 //Screens start hidden, fade in intro on page load
 introScreen.fadeIn();
 
@@ -102,7 +102,10 @@ $("#playAgain").on("click", function() {
     $("#hungerBar").val(currentHunger);
     $("#energyBar").val(currentEnergy);
     $("#boredomBar").val(currentBoredom);
-    replay();
+    if(!restarting) {
+        replay();
+        restarting = true;
+    };
 });
 
 $("#return").on("click", function() {
@@ -111,6 +114,7 @@ $("#return").on("click", function() {
 
 function playGame() {
     gameInProg = true;
+    restarting = false;
 
     let ageUp = setInterval(() => {
         if(gameInProg && currentAge <= 40) {
