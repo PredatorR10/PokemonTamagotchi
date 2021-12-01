@@ -11,9 +11,9 @@ let level = $("#pokeLevel");
 let currentAge = 1;
 let currentLevel = 1;
 
-let currentHunger = 50;
-let currentEnergy = 50;
-let currentBoredom = 50;
+let currentHunger = 100;
+let currentEnergy = 100;
+let currentBoredom = 100;
 
 let gameInProg = true;
 
@@ -26,9 +26,21 @@ function gameStart() {
     setTimeout(() => { gameScreen.fadeIn(); }, 1500);
 };
 
+function replay() {
+    gameOverScreen.fadeOut();
+    setTimeout(() => { gameScreen.fadeIn(); }, 1500);
+};
+
 function gameEnd() {
     gameScreen.fadeOut();
     setTimeout(() => { gameOverScreen.fadeIn(); }, 1500);
+    //resets stats and name field when the game ends
+    $("#nameField").val("");
+    currentHunger = 100;
+    currentEnergy = 100;
+    currentBoredom = 100;
+    currentLevel = 1;
+    currentAge = 1;
 };
 
 function gameReset() {
@@ -42,8 +54,11 @@ $("#startButton").on("click", function() {
     if($("#nameField").val() !== "") {      //Checks for an input that isnt blank
         //initialize default game status and open main game page
         name.text($("#nameField").val());
-        level.text(currentLevel);
-        age.text(currentAge);
+        level.text(`Level: ${currentLevel}`);
+        age.text(`Age: ${currentAge}`);
+        $("#hungerBar").val(currentHunger);
+        $("#energyBar").val(currentEnergy);
+        $("#boredomBar").val(currentBoredom);
         gameStart();
     } else {
         $("#nameWarning").append("Please Enter A Valid Name!");     //Display warning if input is blank
@@ -73,4 +88,20 @@ $("#battleButton").on("click", function() {
         if(currentBoredom > 100) {currentBoredom = 100}; //Boredom can not exceede 100
         $("#boredomBar").val(currentBoredom);
     };
+    gameEnd();
+});
+
+//Game over buttons
+$("#playAgain").on("click", function() {
+    //resets status on replay
+    level.text(`Level: ${currentLevel}`);
+    age.text(`Age: ${currentAge}`);
+    $("#hungerBar").val(currentHunger);
+    $("#energyBar").val(currentEnergy);
+    $("#boredomBar").val(currentBoredom);
+    replay();
+});
+
+$("#return").on("click", function() {
+    gameReset();
 });
