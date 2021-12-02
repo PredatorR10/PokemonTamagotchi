@@ -30,13 +30,13 @@ I started this project by setting up the file and folder structure and ensuring 
 ## Wireframes
 
 Welcome page:  
-![image](https://www.figma.com/file/H1dwgEzOVnx3kuPGTm8nmt/Untitled?node-id=13%3A14)  
+![image](/images/StartPage.png)  
 
 Main game page:  
-![image](https://www.figma.com/file/H1dwgEzOVnx3kuPGTm8nmt/Untitled?node-id=0%3A1)  
+![image](/images/MainGame.png)  
 
 Game over screen:  
-![image](https://www.figma.com/file/H1dwgEzOVnx3kuPGTm8nmt/Untitled?node-id=23%3A68)  
+![image](/images/GameOver.png)  
 
 ## To-Do
 
