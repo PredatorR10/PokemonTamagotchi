@@ -14,13 +14,13 @@ As a user I would want to be greeted with a welcome screen with a choice of bein
 
 ## Technologies Used
 
-HTML
-CSS
-JavaScript
-jQuery
+HTML  
+CSS  
+JavaScript  
+jQuery  
 
-Imported NES CSS framework from:
-https://nostalgic-css.github.io/NES.css/
+Imported NES CSS framework from:  
+https://nostalgic-css.github.io/NES.css/  
 https://github.com/nostalgic-css/NES.css
 
 ## Design Approach
@@ -29,14 +29,14 @@ I started this project by setting up the file and folder structure and ensuring 
 
 ## Wireframes
 
-Welcome page:
-![image](https://www.figma.com/file/H1dwgEzOVnx3kuPGTm8nmt/Untitled?node-id=13%3A14)
+Welcome page:  
+![image](https://www.figma.com/file/H1dwgEzOVnx3kuPGTm8nmt/Untitled?node-id=13%3A14)  
 
-Main game page:
-![image](https://www.figma.com/file/H1dwgEzOVnx3kuPGTm8nmt/Untitled?node-id=0%3A1)
+Main game page:  
+![image](https://www.figma.com/file/H1dwgEzOVnx3kuPGTm8nmt/Untitled?node-id=0%3A1)  
 
-Game over screen:
-![image](https://www.figma.com/file/H1dwgEzOVnx3kuPGTm8nmt/Untitled?node-id=23%3A68)
+Game over screen:  
+![image](https://www.figma.com/file/H1dwgEzOVnx3kuPGTm8nmt/Untitled?node-id=23%3A68)  
 
 ## To-Do
 
